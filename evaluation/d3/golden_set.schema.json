@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aebm.local/schemas/d3/golden_set_sample.schema.json",
+  "title": "D3 Golden Set Sample",
+  "type": "object",
+  "required": [
+    "sample_id",
+    "mode",
+    "candidate_profile",
+    "cv_text",
+    "ground_truth"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "sample_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "candidate_cv_only"
+      ]
+    },
+    "candidate_profile": {
+      "type": "object",
+      "required": [
+        "education_level",
+        "target_transition"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "education_level": {
+          "type": "string"
+        },
+        "target_transition": {
+          "type": "string"
+        },
+        "optional_domain_hint": {
+          "type": "string"
+        }
+      }
+    },
+    "cv_text": {
+      "type": "string",
+      "minLength": 10
+    },
+    "ground_truth": {
+      "type": "object",
+      "required": [
+        "hard_skills_present",
+        "hard_skills_absent",
+        "evidence_spans",
+        "cv_signals"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hard_skills_present": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hard_skills_absent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "skill",
+              "snippet"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "skill": {
+                "type": "string"
+              },
+              "snippet": {
+                "type": "string",
+                "minLength": 3
+              }
+            }
+          }
+        },
+        "cv_signals": {
+          "type": "object",
+          "required": [
+            "impact_metrics_present",
+            "industry_language_present",
+            "publication_overload_risk"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "impact_metrics_present": {
+              "type": "boolean"
+            },
+            "industry_language_present": {
+              "type": "boolean"
+            },
+            "publication_overload_risk": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

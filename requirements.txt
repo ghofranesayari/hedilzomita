@@ -1,0 +1,48 @@
+﻿# AEBM - Direct dependencies (maintained by humans)
+# For reproducible installs, prefer: pip install -r requirements.lock
+
+# UI
+streamlit
+
+# Core data/model
+pandas
+openpyxl
+pydantic
+python-dotenv
+
+# Document ingestion
+python-docx
+docling
+langdetect
+pdfminer.six
+
+# PII & security
+presidio-analyzer
+presidio-anonymizer
+spacy
+cryptography
+
+# Retrieval / memory
+faiss-cpu
+rank-bm25
+neo4j
+rapidfuzz
+numpy
+matplotlib
+sentence-transformers
+
+# LangChain / orchestration
+langgraph
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langchain-openai
+langchain-huggingface
+openai
+groq
+tenacity
+
+# Testing
+pytest
+pytest-cov

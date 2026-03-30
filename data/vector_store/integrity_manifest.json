@@ -1,0 +1,21 @@
+{
+  "version": "vector_store_secure_v1",
+  "files": {
+    "index.faiss": {
+      "sha256": "90984475b7fe9b10f00ddf32a0fa3e1ee2f7782d83e2732d86720c4feecf0272",
+      "size_bytes": 30765
+    },
+    "docstore.json": {
+      "sha256": "bac50ae535f2d7cfa6a82a26c1d558fafa972ae0a414782850195b867f84b099",
+      "size_bytes": 69829
+    },
+    "index_to_docstore_id.json": {
+      "sha256": "ffea8800a21bd9fb6aff8b86393941d49c2a63696ce621d16ffd8075907e3f45",
+      "size_bytes": 483
+    },
+    "bm25_data.json": {
+      "sha256": "21a22759d02f49121f524e98f5f5ad49af924aaca4937d504805f1094e56a454",
+      "size_bytes": 138560
+    }
+  }
+}

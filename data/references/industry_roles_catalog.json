@@ -1,0 +1,221 @@
+{
+  "version": "2026-03-25",
+  "roles": [
+    {
+      "role_title": "R&D Scientist - Bioprocess",
+      "sector": "biotech",
+      "seniority": "IC",
+      "must_have": ["bioprocess", "cell culture", "fermentation", "doe", "statistical analysis"],
+      "nice_to_have": ["gmp", "scale-up", "python", "quality by design"],
+      "transferability_signals": ["cross-functional", "timeline", "optimization", "troubleshooting"],
+      "red_flags": ["purely theoretical", "no experimental ownership"]
+    },
+    {
+      "role_title": "Process Development Engineer - MedTech",
+      "sector": "medtech",
+      "seniority": "IC",
+      "must_have": ["process development", "validation", "risk analysis", "design control"],
+      "nice_to_have": ["iso 13485", "fmea", "manufacturing", "lean"],
+      "transferability_signals": ["protocol", "deliverable", "stakeholder", "deadline"],
+      "red_flags": ["publication list only", "no process metrics"]
+    },
+    {
+      "role_title": "Quality Assurance Specialist - Life Sciences",
+      "sector": "qa_ra",
+      "seniority": "IC",
+      "must_have": ["quality assurance", "documentation", "audit", "deviation", "capa"],
+      "nice_to_have": ["gmp", "iso 9001", "regulatory", "sop"],
+      "transferability_signals": ["compliance", "traceability", "root cause", "preventive action"],
+      "red_flags": ["no quality evidence", "academic only writing"]
+    },
+    {
+      "role_title": "Regulatory Affairs Associate - Medical Devices",
+      "sector": "qa_ra",
+      "seniority": "IC",
+      "must_have": ["regulatory", "technical file", "risk management", "clinical evidence"],
+      "nice_to_have": ["fda", "ce marking", "iso 14971", "iso 13485"],
+      "transferability_signals": ["submission", "requirements", "compliance"],
+      "red_flags": ["no standards cited", "no documentation practice"]
+    },
+    {
+      "role_title": "Data Scientist - Manufacturing Analytics",
+      "sector": "data",
+      "seniority": "IC",
+      "must_have": ["python", "statistics", "machine learning", "data analysis"],
+      "nice_to_have": ["sql", "dashboard", "time series", "predictive maintenance"],
+      "transferability_signals": ["business impact", "kpi", "decision support"],
+      "red_flags": ["no deployed analysis", "no reproducible workflow"]
+    },
+    {
+      "role_title": "ML Engineer - Applied Industry",
+      "sector": "data",
+      "seniority": "IC",
+      "must_have": ["python", "machine learning", "modeling", "evaluation"],
+      "nice_to_have": ["mlops", "docker", "api", "cloud"],
+      "transferability_signals": ["pipeline", "production", "monitoring", "scalability"],
+      "red_flags": ["research only", "no engineering evidence"]
+    },
+    {
+      "role_title": "Clinical Data Scientist",
+      "sector": "biotech",
+      "seniority": "IC",
+      "must_have": ["biostatistics", "clinical data", "python", "statistical modeling"],
+      "nice_to_have": ["sas", "gcp", "rwd", "trial design"],
+      "transferability_signals": ["evidence-based", "regulatory", "cross-functional"],
+      "red_flags": ["no clinical context", "no statistical rigor evidence"]
+    },
+    {
+      "role_title": "Product Development Scientist - Diagnostics",
+      "sector": "medtech",
+      "seniority": "IC",
+      "must_have": ["assay development", "experimental design", "validation", "problem solving"],
+      "nice_to_have": ["design verification", "quality systems", "documentation"],
+      "transferability_signals": ["user need", "product requirement", "iteration"],
+      "red_flags": ["no validation evidence", "publication-heavy CV"]
+    },
+    {
+      "role_title": "Manufacturing Process Engineer",
+      "sector": "manufacturing",
+      "seniority": "IC",
+      "must_have": ["process optimization", "root cause analysis", "continuous improvement"],
+      "nice_to_have": ["lean", "six sigma", "spc", "automation"],
+      "transferability_signals": ["yield", "throughput", "cost reduction", "downtime"],
+      "red_flags": ["no operational metrics", "no production exposure"]
+    },
+    {
+      "role_title": "Validation Engineer - Pharma",
+      "sector": "pharma",
+      "seniority": "IC",
+      "must_have": ["validation", "protocol", "iq oq pq", "gmp"],
+      "nice_to_have": ["csv", "risk assessment", "documentation"],
+      "transferability_signals": ["compliance", "traceability", "approval"],
+      "red_flags": ["no validation documentation", "no quality evidence"]
+    },
+    {
+      "role_title": "Technical Project Manager - DeepTech",
+      "sector": "cross_sector",
+      "seniority": "lead",
+      "must_have": ["project management", "stakeholder management", "planning", "risk management"],
+      "nice_to_have": ["budget", "roadmap", "cross-functional", "agile"],
+      "transferability_signals": ["delivery", "timeline", "ownership", "coordination"],
+      "red_flags": ["no project delivery evidence", "individual research only"]
+    },
+    {
+      "role_title": "Product Manager - Scientific Software",
+      "sector": "product",
+      "seniority": "IC",
+      "must_have": ["problem framing", "communication", "prioritization", "user focus"],
+      "nice_to_have": ["analytics", "roadmap", "go-to-market", "stakeholder alignment"],
+      "transferability_signals": ["impact", "adoption", "decision making"],
+      "red_flags": ["no user/business framing", "too technical without product context"]
+    },
+    {
+      "role_title": "Applications Scientist",
+      "sector": "biotech",
+      "seniority": "IC",
+      "must_have": ["scientific communication", "experimental expertise", "customer interaction"],
+      "nice_to_have": ["demo", "troubleshooting", "training", "technical writing"],
+      "transferability_signals": ["translation", "value proposition", "support"],
+      "red_flags": ["no communication evidence", "no customer-facing signal"]
+    },
+    {
+      "role_title": "Field Application Specialist - MedTech",
+      "sector": "medtech",
+      "seniority": "IC",
+      "must_have": ["technical support", "training", "product knowledge", "communication"],
+      "nice_to_have": ["crm", "sales collaboration", "travel readiness"],
+      "transferability_signals": ["client impact", "issue resolution", "adoption"],
+      "red_flags": ["no support evidence", "no communication clarity"]
+    },
+    {
+      "role_title": "R&D Program Associate",
+      "sector": "cross_sector",
+      "seniority": "IC",
+      "must_have": ["research execution", "coordination", "documentation", "analysis"],
+      "nice_to_have": ["reporting", "roadmap support", "cross-functional"],
+      "transferability_signals": ["execution", "handoff", "timeline"],
+      "red_flags": ["no deliverables", "academic narrative only"]
+    },
+    {
+      "role_title": "Knowledge Transfer Engineer",
+      "sector": "manufacturing",
+      "seniority": "IC",
+      "must_have": ["documentation", "training", "process understanding", "communication"],
+      "nice_to_have": ["sop", "quality", "change control"],
+      "transferability_signals": ["transferability", "implementation", "operationalization"],
+      "red_flags": ["no process evidence", "no implementation signal"]
+    },
+    {
+      "role_title": "Bioinformatics Scientist - Applied Genomics",
+      "sector": "biotech",
+      "seniority": "IC",
+      "must_have": ["python", "bioinformatics", "data analysis", "pipeline"],
+      "nice_to_have": ["nextflow", "snakemake", "cloud", "sql"],
+      "transferability_signals": ["reproducibility", "automation", "decision support"],
+      "red_flags": ["no pipeline evidence", "analysis not linked to impact"]
+    },
+    {
+      "role_title": "Computational Scientist - Materials",
+      "sector": "materials",
+      "seniority": "IC",
+      "must_have": ["modeling", "simulation", "python", "scientific computing"],
+      "nice_to_have": ["finite element", "optimization", "data-driven modeling"],
+      "transferability_signals": ["design decision", "faster iteration", "cost reduction"],
+      "red_flags": ["theory-only profile", "no validation signal"]
+    },
+    {
+      "role_title": "Process Analytics Scientist",
+      "sector": "manufacturing",
+      "seniority": "IC",
+      "must_have": ["statistics", "process data", "python", "root cause analysis"],
+      "nice_to_have": ["spc", "dashboard", "automation", "sql"],
+      "transferability_signals": ["yield improvement", "defect reduction", "cycle time"],
+      "red_flags": ["no measurable outcomes", "no process context"]
+    },
+    {
+      "role_title": "Scientist - Technology Transfer",
+      "sector": "pharma",
+      "seniority": "IC",
+      "must_have": ["tech transfer", "documentation", "validation", "cross-site collaboration"],
+      "nice_to_have": ["gmp", "change control", "deviation management"],
+      "transferability_signals": ["handover", "scale-up", "implementation"],
+      "red_flags": ["no transfer examples", "no quality language"]
+    },
+    {
+      "role_title": "Innovation Engineer - Industrial R&D",
+      "sector": "cross_sector",
+      "seniority": "IC",
+      "must_have": ["problem solving", "prototyping", "experimental design", "communication"],
+      "nice_to_have": ["ip awareness", "cross-functional", "product mindset"],
+      "transferability_signals": ["prototype to product", "business value", "timeline"],
+      "red_flags": ["idea-only narrative", "no prototyping evidence"]
+    },
+    {
+      "role_title": "Technical Consultant - Life Sciences",
+      "sector": "consulting",
+      "seniority": "IC",
+      "must_have": ["analysis", "communication", "structured thinking", "client orientation"],
+      "nice_to_have": ["project delivery", "presentation", "stakeholder management"],
+      "transferability_signals": ["recommendation", "impact", "implementation"],
+      "red_flags": ["no client-facing evidence", "unclear business framing"]
+    },
+    {
+      "role_title": "Startup Scientist - Early Stage DeepTech",
+      "sector": "startup",
+      "seniority": "IC",
+      "must_have": ["autonomy", "experimentation", "problem solving", "adaptability"],
+      "nice_to_have": ["prototype", "fundraising support", "cross-functional"],
+      "transferability_signals": ["ownership", "speed", "resource constraints"],
+      "red_flags": ["needs heavy supervision", "narrow academic specialization only"]
+    },
+    {
+      "role_title": "Senior Director of Regulatory Strategy",
+      "sector": "qa_ra",
+      "seniority": "executive",
+      "must_have": ["regulatory leadership", "team management", "global submission strategy"],
+      "nice_to_have": ["budget ownership", "executive communication", "portfolio strategy"],
+      "transferability_signals": ["leadership", "organizational impact"],
+      "red_flags": ["entry-level profile", "no management evidence"]
+    }
+  ]
+}
