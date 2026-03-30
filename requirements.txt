@@ -12,7 +12,7 @@ python-dotenv
 
 # Document ingestion
 python-docx
-docling
+docling[rapidocr]
 langdetect
 pdfminer.six
 

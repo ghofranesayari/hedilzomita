@@ -44,6 +44,11 @@ def render_candidate_mode(app_mode: str, mode_candidat: str, orchestrator) -> No
                 parser = ContentParser()
                 cv_temp_path = save_temp_file(up_cv)
                 cv_txt = parser.parse_pdf(Path(cv_temp_path))
+                if not parser.has_usable_text(cv_txt):
+                    raise ValueError(
+                        "Impossible d'extraire suffisamment de texte du CV PDF. "
+                        "Utilisez un PDF texte/selectable ou un document scanne plus net."
+                    )
 
                 pseudo_job_desc = (
                     "Evaluation de transition PhD/Postdoc vers industrie. "

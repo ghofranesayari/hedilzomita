@@ -30,13 +30,25 @@ def render_internal_mode(app_mode: str, mode_interne: str, orchestrator) -> None
                     parser = ContentParser()
                     job_path = save_temp_file(uploaded_job)
                     job_text = parser.parse_pdf(Path(job_path))
+                    if not parser.has_usable_text(job_text):
+                        raise ValueError(
+                            "Impossible d'extraire suffisamment de texte de l'offre PDF. "
+                            "Utilisez un PDF texte/selectable ou un document scanne plus net."
+                        )
                     st.session_state.current_job_text = job_text
 
                     hyde = HydeGenerator()
                     query_vec = hyde.generate_hypothetical_cvs(job_text)
+                    if not query_vec or not query_vec.strip():
+                        raise ValueError("La generation HyDE a retourne une requete vide.")
                     vdb = VectorDBManager("data/vector_store")
 
                     st.session_state.shortlist = vdb.search(query_vec, k=top_k)
+                    if not st.session_state.shortlist:
+                        raise RuntimeError(
+                            "La recherche vectorielle n'a retourne aucun profil exploitable. "
+                            "Verifiez l'extraction du PDF et les logs Streamlit si le probleme persiste."
+                        )
                     st.success(f"{len(st.session_state.shortlist)} profils identifies !")
                 except Exception as exc:
                     st.error(f"Erreur lors de la recherche : {exc}")
