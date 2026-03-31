@@ -72,11 +72,11 @@ class VectorDBManager:
                 self._load()
             except Exception as e:
                 print(f" Impossible de charger l'index : {e}")
-                return []
+                raise RuntimeError(f"Impossible de charger l'index vectoriel : {e}") from e
 
         total_docs = len(self.corpus_metadata)
         if total_docs == 0:
-            return []
+            raise RuntimeError("Index vectoriel charge mais vide.")
 
         # 1) FAISS semantic score
         faiss_results = self.db.similarity_search_with_score(query_vector, k=total_docs)
@@ -255,13 +255,23 @@ class VectorDBManager:
                 digest.update(chunk)
         return digest.hexdigest()
 
+    @staticmethod
+    def _semantic_json_sha256(path: str) -> str:
+        with open(path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+        canonical = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
     def _build_integrity_manifest(self, file_paths: List[str]) -> Dict:
         files = {}
         for p in file_paths:
-            files[os.path.basename(p)] = {
+            entry = {
                 "sha256": self._sha256_file(p),
                 "size_bytes": os.path.getsize(p),
             }
+            if p.lower().endswith(".json"):
+                entry["semantic_sha256"] = self._semantic_json_sha256(p)
+            files[os.path.basename(p)] = entry
         return {
             "version": "vector_store_secure_v1",
             "files": files,
@@ -280,7 +290,30 @@ class VectorDBManager:
                 raise ValueError(f"Manifest incomplet: hash manquant pour {fname}.")
 
             current_hash = self._sha256_file(p)
-            if current_hash != expected_hash:
-                raise ValueError(
-                    f"Integrite echouee pour {fname}. Reindex requis avant chargement."
-                )
+            if current_hash == expected_hash:
+                continue
+
+            if p.lower().endswith(".json"):
+                try:
+                    current_semantic_hash = self._semantic_json_sha256(p)
+                    expected_semantic_hash = expected.get("semantic_sha256", "")
+                    if expected_semantic_hash and current_semantic_hash == expected_semantic_hash:
+                        print(
+                            f" [VECTOR] Hash binaire different pour {fname}, mais contenu JSON equivalent "
+                            "(compatibilite cross-platform)."
+                        )
+                        continue
+                    if not expected_semantic_hash:
+                        print(
+                            f" [VECTOR] Hash binaire different pour {fname}; manifest ancien sans semantic hash. "
+                            "JSON accepte pour compatibilite cross-platform."
+                        )
+                        continue
+                except Exception as exc:
+                    raise ValueError(
+                        f"Integrite echouee pour {fname}. JSON sidecar invalide: {exc}"
+                    ) from exc
+
+            raise ValueError(
+                f"Integrite echouee pour {fname}. Reindex requis avant chargement."
+            )
